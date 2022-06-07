@@ -1,14 +1,15 @@
-baseURL = 'https://sthkarun.github.io/'
+baseURL = 'https://sthkarun.github.io/yourlogo'
 languageCode = 'en-us'
 title = 'Your Logo'
 theme = "yourlogo"
+
 
 [params]
 	logo = "/images/logo.png"
   logoUrl = "/"
   footerTitle = "ABOUT"
   footerDetail= "Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididunt ultimam quantum"
-
+  
 [menu]
   [[menu.main]]
     name = "Home"
