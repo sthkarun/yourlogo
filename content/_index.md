@@ -16,7 +16,7 @@ order:
     - title: Delivery
       description: Lorem ipsum dolor sit amet, consecte sectetur adipisicing elit, tation omne ullamco laboris nisi ut aliqolore.
 delivery:
-  background: images/bg-img.jpg
+  background: /images/bg-img.jpg
   title: FREE DELIVERY
   description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
   buttonLink: #

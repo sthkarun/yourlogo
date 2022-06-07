@@ -6,7 +6,7 @@ theme = "yourlogo"
 
 [params]
 	logo = "/images/logo.png"
-  logoUrl = "/"
+  logoUrl = "https://sthkarun.github.io/yourlogo"
   footerTitle = "ABOUT"
   footerDetail= "Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididunt ultimam quantum"
   
