@@ -1,4 +1,4 @@
-baseURL = 'https://sthkarun.github.io/yourlogo'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Your Logo'
 theme = "yourlogo"
