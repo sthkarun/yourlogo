@@ -1,0 +1,29 @@
+<!-- footer of the page -->
+<footer id="footer">
+	<!-- footer content -->
+	<div class="footer-content">
+		<div class="container">
+			<div class="about">
+				<h5>{{ .Site.Params.footerTitle }}</h5>
+				<p>
+					{{ .Site.Params.footerDetail }}
+				</p>
+			</div>
+			<ul class="footer-links">
+				{{ $currentPage := . }}
+				{{ range .Site.Menus.footer }}
+				<li>
+					<span class="h6"><a href="{{ .URL }}">{{ .Name }}</a></span>
+					{{ if .HasChildren }}
+						<ul class="links">
+						 	{{ range .Children }}
+								<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+							{{ end }}
+						</ul>
+					{{ end }}
+				</li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+</footer>

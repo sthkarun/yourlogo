@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="menu-section no-decor">
+	<div class="container">
+		<h1>{{.Title}}</h1>
+		<ul class="card-list" id="grid">
+			<li class="item-sizer"></li>
+			{{ range .Pages }}
+			<li>
+				<a href="{{ .Permalink  }}" class="card" aria-label="menu list">
+					{{ if .Params.image }}
+					<div class="img">
+						<img src="{{ .Params.image }}" alt="Image Description" />
+					</div>
+					{{end}}
+					<div class="info">
+						{{if .Title }}
+						<strong class="title">{{ .Title }}</strong>
+						{{ end }}
+						{{ if .Summary }}
+						<p>{{ .Summary }}</p>
+						{{end}}
+						{{ if .Params.price }}
+						<strong class="price">{{ .Params.price }}</strong>
+						{{end}}
+					</div>
+				</a>
+			</li>
+			{{end}}
+		</ul>
+	</div>
+</section>
+{{end}}

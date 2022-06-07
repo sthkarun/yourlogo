@@ -1,0 +1,77 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Your Logo'
+theme = "yourlogo"
+
+[params]
+	logo = "/images/logo.png"
+  logoUrl = "/"
+  footerTitle = "ABOUT"
+  footerDetail= "Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididunt ultimam quantum"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Menus"
+    url = "/menus"
+    weight = 2
+  [[menu.main]]
+    name = "Blogs"
+    url = "/blogs"
+    weight = 3
+  [[menu.footer]]
+    name = "About"
+    url = "#"
+    weight = 1
+  [[menu.footer]]
+    name = "Team"
+    url = "#"
+    parent = "About"
+    weight = 1
+  [[menu.footer]]
+    name = "Join us"
+    url = "#"
+    parent = "About"
+    weight = 2
+  [[menu.footer]]
+    name = "Ethic"
+    url = "#"
+    parent = "About"
+    weight = 3
+  [[menu.footer]]
+    name = "Goals"
+    url = "#"
+    parent = "About"
+    weight = 4
+  [[menu.footer]]
+    name = "About 1"
+    url = "#"
+    weight = 2
+  [[menu.footer]]
+    name = "Team 1"
+    url = "#"
+    parent = "About 1"
+    weight = 1
+  [[menu.footer]]
+    name = "Join us 1"
+    url = "#"
+    parent = "About 1"
+    weight = 2
+  [[menu.footer]]
+    name = "Ethic 1"
+    url = "#"
+    parent = "About 1"
+    weight = 3
+  [[menu.footer]]
+    name = "Goals 1"
+    url = "#"
+    parent = "About 1"
+    weight = 4
+
+
+    
+sectionPagesMenu = "main"
+

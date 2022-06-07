@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+<body>
+	<div class="wrapper">
+		<a class="accessibility" href="#main">Skip to Content</a>
+		<div class="w1">
+			<!-- header of the page -->
+			{{- partial "header.html" . -}}
+			<div id="main" role="main">
+				{{- block "main" . }}{{- end }}
+			</div>
+			{{- partial "footer.html" . -}}
+
+			<a class="accessibility" href="#wrapper">Back to top</a>
+		</div>
+	</div>
+	<script defer src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="section text-left">
+	<div class="container">
+		<h3>{{.Title}}</h3>
+		<time datetime="2009-10-09"> {{ .Date.Format "Mon Jan 2, 2006" }}</time>
+		<br>
+		<br>
+		{{ if .Params.image }}
+		<div class="fig-img">
+			<img src="{{.Params.image}}" alt="image description">
+		</div>
+		{{end}}
+		{{ .Content }}
+	</div>
+</section>
+{{end}}

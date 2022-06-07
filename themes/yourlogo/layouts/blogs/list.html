@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="media-section bigger">
+	<h1 class="text-center">{{.Title}}</h1>
+	<div>
+		{{ range .Pages }}
+		<div class="media">
+			{{ if  .Params.Image }}
+			<div class="img">
+				<img src="{{ .Params.Image }}" alt="{{ .Title }}">
+			</div>
+			{{ end }}
+			<div class="desc">
+				<div class="inner">
+					<h3>
+						{{ .Title }}
+					</h3>
+					<p>{{ .Summary }}</p>
+					<a href="{{ .Permalink }}" class="btn" role="button" aria-label="Read More">Read More</a>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	</div>
+</section>
+{{end}}

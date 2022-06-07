@@ -1,0 +1,141 @@
+{{ define "main" }}
+<!-- Hero Section -->
+{{if .Params.banner }}
+<section class="hero-section">
+	<div class="container">
+		{{ if .Params.banner.title }}
+		<h1>{{ .Params.banner.title  }}</h1>
+		{{ end }}
+		{{ if .Params.banner.description }}
+		<div class="txt-wrap">
+			<p>{{  .Params.banner.description }}</p>
+		</div>
+		{{ end }}
+	</div>
+</section>
+{{end }}
+<!-- Menu Section -->
+<section class="menu-section">
+	<div class="container">
+		{{ if .Params.popuplar.title }}
+		<h2 class="h4">{{ .Params.popuplar.title }}</h2>
+		{{end}}
+		<ul class="card-list" id="grid">
+			<li class="item-sizer"></li>
+			{{ range first 6 (where (where .Site.RegularPages "Section" "menus") "Params.featured" "=" true ) }}
+			<li>
+				<a href="{{ .Permalink  }}" class="card" aria-label="menu list">
+					{{ if .Params.image }}
+					<div class="img">
+						<img src="{{ .Params.image }}" alt="Image Description" />
+					</div>
+					{{end}}
+					<div class="info">
+						{{if .Title }}
+						<strong class="title">{{ .Title }}</strong>
+						{{ end }}
+						{{ if .Summary }}
+						<p>{{ .Summary }}</p>
+						{{end}}
+						{{ if .Params.price }}
+						<strong class="price">{{ .Params.price }}</strong>
+						{{end}}
+					</div>
+				</a>
+			</li>
+			{{end}}
+		</ul>
+	</div>
+</section>
+<!-- Media Section -->
+<section class="media-section">
+	{{ range where .Site.RegularPages "Section" "blogs" }}
+	<div class="media">
+		{{ if  .Params.Image }}
+		<div class="img">
+			<img src="{{ .Params.Image }}" alt="{{ .Title }}">
+		</div>
+		{{ end }}
+		<div class="desc">
+			<div class="inner">
+				<h3>
+					{{ .Title }}
+				</h3>
+				<p>{{ .Summary }}</p>
+				<a href="{{ .Permalink }}" class="btn" role="button" aria-label="Read More">Read More</a>
+			</div>
+		</div>
+	</div>
+	{{ end }}
+</section>
+<!-- How To Order -->
+{{if .Params.order }}
+<section class="how-to-order">
+	<div class="container">
+		{{if .Params.order.title }}
+		<h4>{{.Params.order.title}}</h4>
+		{{ end }}
+		<ul class="order-list">
+			{{ range .Params.order.list }} 
+			<li>
+				{{ if .title}}
+				<h3 class="title">{{.title}}</h3>
+				{{end}}
+				{{if .description}}
+				<p>{{.description}}</p>
+				{{end}}
+			</li>
+			{{end}}
+		</ul>
+	</div>
+</section>
+{{end}}
+<!-- Free Delivery -->
+{{if .Params.delivery }}
+<section class="free-delivery">
+	<div class="bg-img" style="background-image: url({{ .Params.delivery.background }})"></div>
+	<div class="container">
+		{{if .Params.delivery.title }}
+		<h5 class="h2">{{ .Params.delivery.title }}</h5>
+		{{end}}
+		{{if .Params.delivery.description }}
+		<p>{{ .Params.delivery.description }}</p>
+		{{end}}
+		{{if .Params.delivery.buttonText }}
+		<a class="btn btn-lg" href="{{ .Params.delivery.buttonLink }}" role="button" aria-label="{{ .Params.delivery.buttonText }}">{{ .Params.delivery.buttonText }}</a>
+		{{end}}
+	</div>
+</section>
+{{end}}
+
+<!-- Blockquote Section -->
+{{if .Params.blockquote }}
+<section class="blockquote-section">
+	<div class="container">
+		<blockquote>
+			<q>{{.Params.blockquote.quote}}</q>
+			<cite>{{.Params.blockquote.cite}}</cite>
+		</blockquote>
+		{{ if .Params.blockquote.socialLink }}
+		<ul class="social-networks">
+			{{ if .Params.blockquote.socialLink.facebook }}
+			<li>
+				<a href="{{ .Params.blockquote.socialLink.facebook}}" target="_blank" aria-label="facebook"><img src="images/icon-facebook.png" alt="Image Description" /></a>
+			</li>
+			{{end}}
+			{{ if .Params.blockquote.socialLink.twitter }}
+			<li>
+				<a href="{{ .Params.blockquote.socialLink.twitter}}" target="_blank" aria-label="twitter"><img src="images/icon-twitter.png" alt="Image Description" /></a>
+			</li>
+			{{end}}
+			{{ if .Params.blockquote.socialLink.instagram }}
+			<li>
+				<a href="{{ .Params.blockquote.socialLink.instagram}}" target="_blank" aria-label="instagram"><img src="images/icon-instagram.png" alt="Image Description" /></a>
+			</li>
+			{{end}}
+		</ul>
+		{{end}}
+	</div>
+</section>
+{{ end }}
+{{end}}

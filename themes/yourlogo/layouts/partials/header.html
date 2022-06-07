@@ -1,0 +1,26 @@
+ <header class="header">
+  <div class="container">
+    {{ if .Site.Params.logo }}
+    <div id="logo">
+      <a href="{{ .Site.Params.logoUrl}}" role="button" aria-label="logo"><img src="{{ .Site.Params.logo }}" alt="Your logo" /></a>
+    </div>
+    {{ end }}
+    <!-- Navbar -->
+    <a class="accessibility" href="#main" accesskey="s">Skip to Navigation</a>
+    <nav id="navbar" role="navigation">
+      {{ $page := .Title }}
+      <ul class="nav">
+       {{ $currentPage := . }}
+       {{ range .Site.Menus.main }}
+       <li class='{{if eq $page .Name }} active{{end}}'>
+        <a href="{{ .URL }}" aria-label="{{ .Name }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      
+    </ul>
+    <a href="#" class="nav-opener" aria-label="nav opener"
+    ><span><span class="hidden">Nav Opener</span></span></a
+    >
+  </nav>
+</div>
+</header>
