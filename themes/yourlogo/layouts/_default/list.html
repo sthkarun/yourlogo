@@ -9,7 +9,7 @@
 				<a href="{{ .Permalink  }}" class="card" aria-label="menu list">
 					{{ if .Params.image }}
 					<div class="img">
-						<img src="{{ .Params.image | absURL }}" alt="Image Description" />
+						<img src="{{ .Site.BaseURL }}{{ .Params.image  }}" alt="Image Description" />
 					</div>
 					{{end}}
 					<div class="info">
