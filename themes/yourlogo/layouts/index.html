@@ -27,7 +27,7 @@
 				<a href="{{ .Permalink  }}" class="card" aria-label="menu list">
 					{{ if .Params.image }}
 					<div class="img">
-						<img src="{{ .Params.image }}" alt="Image Description" />
+						<img src="{{ .Params.image | absURL }}" alt="Image Description" />
 					</div>
 					{{end}}
 					<div class="info">
@@ -53,7 +53,7 @@
 	<div class="media">
 		{{ if  .Params.Image }}
 		<div class="img">
-			<img src="{{ .Params.Image }}" alt="{{ .Title }}">
+			<img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
 		</div>
 		{{ end }}
 		<div class="desc">
@@ -93,7 +93,7 @@
 <!-- Free Delivery -->
 {{if .Params.delivery }}
 <section class="free-delivery">
-	<div class="bg-img" style="background-image: url({{ .Params.delivery.background }})"></div>
+	<div class="bg-img" style="background-image: url({{ .Params.delivery.background | absURL }})"></div>
 	<div class="container">
 		{{if .Params.delivery.title }}
 		<h5 class="h2">{{ .Params.delivery.title }}</h5>
@@ -120,17 +120,17 @@
 		<ul class="social-networks">
 			{{ if .Params.blockquote.socialLink.facebook }}
 			<li>
-				<a href="{{ .Params.blockquote.socialLink.facebook}}" target="_blank" aria-label="facebook"><img src="images/icon-facebook.png" alt="Image Description" /></a>
+				<a href="{{ .Params.blockquote.socialLink.facebook | absURL}}" target="_blank" aria-label="facebook"><img src="images/icon-facebook.png" alt="Image Description" /></a>
 			</li>
 			{{end}}
 			{{ if .Params.blockquote.socialLink.twitter }}
 			<li>
-				<a href="{{ .Params.blockquote.socialLink.twitter}}" target="_blank" aria-label="twitter"><img src="images/icon-twitter.png" alt="Image Description" /></a>
+				<a href="{{ .Params.blockquote.socialLink.twitter | absURL}}" target="_blank" aria-label="twitter"><img src="images/icon-twitter.png" alt="Image Description" /></a>
 			</li>
 			{{end}}
 			{{ if .Params.blockquote.socialLink.instagram }}
 			<li>
-				<a href="{{ .Params.blockquote.socialLink.instagram}}" target="_blank" aria-label="instagram"><img src="images/icon-instagram.png" alt="Image Description" /></a>
+				<a href="{{ .Params.blockquote.socialLink.instagram | absURL}}" target="_blank" aria-label="instagram"><img src="images/icon-instagram.png" alt="Image Description" /></a>
 			</li>
 			{{end}}
 		</ul>

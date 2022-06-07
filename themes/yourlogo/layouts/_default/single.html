@@ -7,7 +7,7 @@
 		<br>
 		{{ if .Params.image }}
 		<div class="fig-img">
-			<img src="{{.Params.image}}" alt="image description">
+			<img src="{{.Params.image | absURL}}" alt="image description">
 		</div>
 		{{end}}
 		{{ .Content }}
